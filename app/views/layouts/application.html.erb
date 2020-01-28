@@ -5,11 +5,40 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <%= stylesheet_link_tag 'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css', media: 'all',
+                            'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+      <h5 class="my-0 mr-md-auto font-weight-bold">CLOTHING ATELIER</h5>
+      <nav class="my-2 my-md-0 mr-md-3">
+<!--        <a class="p-2 text-dark" href="#">Features</a>-->
+<!--        <a class="p-2 text-dark" href="#">Enterprise</a>-->
+<!--        <a class="p-2 text-dark" href="#">Support</a>-->
+<!--        <a class="p-2 text-dark" href="#">Pricing</a>-->
+        <a class="p-2 text-dark"> <%= link_to "Main page", home_path %></a>
+        <a class="p-2 text-dark"> <%= link_to "About us", about_path %></a>
+        <% if user_signed_in? %>
+          <a class="p-2 text-dark"> <%= link_to "New post", new_post_path %></a>
+        <%end %>
+      </nav>
+
+      <% if user_signed_in? %>
+        <a class="p-2 text-dark"><%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %></a>
+        <span class="btn-t btn btn-outline-primary"><%= link_to('Logout', destroy_user_session_path, method: :delete) %></span>
+      <% else %>
+        <span class="btn-t btn btn-outline-primary"><%= link_to('Login', new_user_session_path) %></span>
+        <span class="btn-t btn btn-outline-primary"><%= link_to('Register', sign_up_path) %></span>
+      <% end %>
+
+    </div>
+
+    <div class="container">
+      <%= yield %>
+    </div>
+
   </body>
 </html>
