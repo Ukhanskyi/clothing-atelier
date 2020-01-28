@@ -16,3 +16,6 @@
 .btn-t{
     margin: 3px;
 }
+.text-abz{
+    text-indent: 40px; /* Отступ первой строки в пикселах */
+}

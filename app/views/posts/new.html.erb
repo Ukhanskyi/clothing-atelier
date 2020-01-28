@@ -1,19 +1,21 @@
-<h2> Create new post </h2>
-<%= form_for :post, url: posts_path do |f| %>
-  <%if @post.errors.any? %>
-    <% @post.errors.full_messages.each do |msg| %>
-      <div class="alert alert-danger"><%= msg %></div>
+<div class="content w-50 p-3">
+  <h2> Create new post </h2>
+  <%= form_for :post, url: posts_path do |f| %>
+    <%if @post.errors.any? %>
+      <% @post.errors.full_messages.each do |msg| %>
+        <div class="alert alert-danger"><%= msg %></div>
+    <% end %>
   <% end %>
-<% end %>
-  <p>
-    Name post<br>
-    <%= f.text_field(:title, {:class => 'form-control'}) %>
-  </p>
-  <p>
-    Text post<br>
-    <%= f.text_area(:body, {:class => 'form-control'}) %>
-  </p>
-  <p>
-    <%= f.submit({:class => 'btn btn-outline-primary'}) %>
-  </p>
-<% end %>
+    <div class="content m-2">
+      <div class="content m-1"> Name post<br></div>
+      <%= f.text_field(:title, {:class => 'form-control'}) %>
+    </div>
+    <div class="content m-2">
+      <div class="content m-1"> Text post<br></div>
+      <%= f.text_area(:body, {:class => 'form-control'}) %>
+    </div>
+    <div class="content m-2">
+      <%= f.submit({:class => 'btn btn-outline-primary'}) %>
+    </div>
+  <% end %>
+</div>
