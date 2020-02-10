@@ -1,0 +1,10 @@
+<h2> Your orders </h2>
+<% @order.each do |order| %>
+  <hr>
+  <div class="alert alert-light">
+    <h3><b><%= order.surname %> <%= order.name %></b></h3>
+    <p><b>Clothing name:</b> <%= order.detail.clothing_name%></p>
+    <p><b>Size: </b><%= order.detail.size%></p>
+    <%= link_to "Show order", order_path(order), class: 'btn btn-outline-primary'  %>
+  </div>
+<% end %>

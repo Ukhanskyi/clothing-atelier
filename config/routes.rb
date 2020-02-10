@@ -4,7 +4,10 @@ Rails.application.routes.draw do
   root 'posts#index', as: 'home'
 
   get 'about' => 'pages#about', as: 'about'
+  #get 'order/new' => 'orders#new', as: 'order'
+  #post 'order/new' => 'orders#new', as: 'order'
   get 'users/sign_up' => 'users#sign_up', as: 'sign_up'
 
   resources :posts
+  resources :orders
 end
