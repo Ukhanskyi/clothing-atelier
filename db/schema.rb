@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 2020_02_06_215857) do
   enable_extension "plpgsql"
 
   create_table "details", force: :cascade do |t|
+    t.integer "order_id"
     t.string "clothing_name"
     t.string "color"
     t.string "collar"
@@ -29,7 +30,6 @@ ActiveRecord::Schema.define(version: 2020_02_06_215857) do
 
   create_table "orders", force: :cascade do |t|
     t.integer "user_id"
-    t.integer "detail_id"
     t.string "name"
     t.string "surname"
     t.string "email"

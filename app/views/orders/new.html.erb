@@ -1,7 +1,6 @@
 <div class="content w-75 p-3">
   <% @order.build_detail %>
 
-  <%#= resource.build_details %>
   <%= simple_form_for @order,
                       wrapper: :horizontal_form,
                       wrapper_mappings: {
@@ -56,6 +55,8 @@
         <%= detail.input :price %>
       </div>
     <% end %>
+
+    <!-- end form with nested attribute -->
 
     <div class="container">
       <%= f.submit("Make order", {class: 'btn btn-outline-primary mt-2'})%>

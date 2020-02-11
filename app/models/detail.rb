@@ -1,3 +1,5 @@
 class Detail < ApplicationRecord
-  has_one :order
+  belongs_to :order
+
+  validates :order, presence: true, uniqueness: { scope: :order_id }
 end
