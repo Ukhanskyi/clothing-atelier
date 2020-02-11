@@ -1,0 +1,23 @@
+<div class="alert alert-light">
+  <h3><b><%= @order.surname %> <%= @order.name %></b></h3>
+  <p></p>
+  <p><b>Email:</b> <%= @order.email %></p>
+  <p><b>Phone number:</b> <%= @order.phone %></p>
+  <p><b>Address:</b> <%= @order.address %></p>
+  <% if @order.gender == true %>
+    <p><b>Your gender:</b> man</p>
+  <% else %>
+    <p><b>Your gender:</b> woman</p>
+  <% end %>
+<hr>
+  <p><b>Clothing name:</b> <%=@order.detail.clothing_name %></p>
+  <p><b>Color:</b> <%= @order.detail.color %></p>
+  <p><b>Collar:</b> <%= @order.detail.collar %></p>
+  <p><b>Sleeve type:</b> <%= @order.detail.sleeve %></p>
+  <p><b><%= @order.detail.clothing_name %>:</b> <%= @order.detail.length %></p>
+  <p><b>Size:</b> <%= @order.detail.size %></p>
+  <p><b>Price:</b> <%= @order.detail.price %> UAH</p>
+  <hr>
+  <%= link_to "Edit", edit_order_path(@order), class: 'btn btn-outline-warning' %>
+  <%= link_to "Destroy", order_path(@order), method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-outline-danger' %>
+</div>

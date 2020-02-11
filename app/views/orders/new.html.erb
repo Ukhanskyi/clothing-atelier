@@ -1,0 +1,65 @@
+<div class="content w-75 p-3">
+  <% @order.build_detail %>
+
+  <%= simple_form_for @order,
+                      wrapper: :horizontal_form,
+                      wrapper_mappings: {
+                          boolean:       :horizontal_boolean,
+                          check_boxes:   :horizontal_collection,
+                          radio_buttons: :horizontal_collection,
+                      } do |f| %>
+
+    <%= f.error_notification %>
+
+    <div class="container">
+      <%= f.input :name, class: 'form-control'%>
+    </div>
+    <div class="container">
+      <%= f.input :surname, class: 'form-control'%>
+    </div>
+    <div class="container">
+      <%= f.input :email, input_html: { autocomplete: 'email' }, class: 'form-control'%>
+    </div>
+    <div class="container">
+      <%= f.input :phone, prompt: "Enter phone number", class: 'form-control' %>
+    </div>
+    <div class="container">
+      <%= f.input :address, class: 'form-control'%>
+    </div>
+    <div class="container">
+      <%= f.input :gender, as: :radio_buttons, collection: [%w(true male), %w(false female)], label_method: :second, value_method: :first, class: 'form-control' %>
+    </div>
+
+    <!-- from another table using nested attribute -->
+
+    <%= f.simple_fields_for :detail do |detail| %>
+      <div class="container">
+        <%= detail.input :clothing_name, class: 'form-control' %>
+      </div>
+      <div class="container">
+        <%= detail.input :color, collection: %w(Red Black White Yellow Purple Blue Orange Green Brown Grey), class: 'form-control' %>
+      </div>
+      <div class="container">
+        <%= detail.input :collar, collection: %w(Basic Polo V-neck), class: 'dropdown-item outline-secondary' %>
+      </div>
+      <div class="container">
+        <%= detail.input :sleeve, collection: %w(Short Middle Long) %>
+      </div>
+      <div class="container">
+        <%= detail.input :length, collection: %w(Mini Above_knee Knee_length Cocktail Midi Maxi Floor_length) %>
+      </div>
+      <div class="container">
+        <%= detail.input :size, collection: %w(S M L XL XXL) %>
+      </div>
+      <div class="container">
+        <%= detail.input :price %>
+      </div>
+    <% end %>
+
+    <!-- end form with nested attribute -->
+
+    <div class="container">
+      <%= f.submit("Make order", {class: 'btn btn-outline-primary mt-2'})%>
+    </div>
+  <% end %>
+</div>

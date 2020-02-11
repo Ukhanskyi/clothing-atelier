@@ -2,6 +2,9 @@ source 'https://rubygems.org'
 
 ruby '2.7.0'
 
+# Simple form for create easy
+gem 'simple_form'
+# For authorization
 gem 'devise'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.2', '>= 6.0.2.1'
