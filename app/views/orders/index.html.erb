@@ -6,5 +6,6 @@
     <p><b>Clothing name:</b> <%= order.detail.clothing_name%></p>
     <p><b>Size: </b><%= order.detail.size%></p>
     <%= link_to "Show order", order_path(order), class: 'btn btn-outline-primary'  %>
+    <%= button_to "Confirm order", confirm_order_path(order), class: 'btn btn-outline-primary mt-1' %>
   </div>
 <% end %>

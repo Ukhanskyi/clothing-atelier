@@ -1,10 +1,21 @@
+# frozen_string_literal: true
+
 class Order < ApplicationRecord
   belongs_to :user
   has_one :detail, dependent: :destroy
 
   accepts_nested_attributes_for :detail
 
-  after_create :order_email
+  include AASM
+
+  aasm column: 'state' do
+    state :initialized, initial: true
+    state :confirmed
+
+    event :confirm, after: :order_email do
+      transitions from: :initialized, to: :confirmed
+    end
+  end
 
   private
 
