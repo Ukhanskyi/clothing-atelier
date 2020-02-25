@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class OrdersController < ApplicationController
   before_action :find_order, only: %i[show edit update destroy]
 
@@ -7,6 +9,12 @@ class OrdersController < ApplicationController
 
   def new
     @order = Order.new
+  end
+
+  def confirm
+    @order = Order.find(params[:id])
+    @order.confirm!
+    render 'show'
   end
 
   def show; end
@@ -29,7 +37,7 @@ class OrdersController < ApplicationController
   def create
     # render plain: params[:post].inspect
 
-    @order = Order.new order_params
+    @order = Order.new(order_params)
     @order.user_id = current_user.id
 
     if @order.save
@@ -42,10 +50,14 @@ class OrdersController < ApplicationController
   private
 
   def order_params
-    params.require(:order).permit(:name, :surname, :email, :phone, :address, :gender, detail_attributes: %i[order_id clothing_name color collar sleeve length size price])
+    params.require(:order).permit(:name, :surname, :email, :phone, :address,
+                                  :gender, :state,
+                                  detail_attributes: %i[order_id clothing_name
+                                                        color collar sleeve
+                                                        length size price])
   end
 
   def find_order
-    @order = Order.find params[:id]
+    @order = Order.find(params[:id])
   end
 end

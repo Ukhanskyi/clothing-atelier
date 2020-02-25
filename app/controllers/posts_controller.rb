@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 class PostsController < ApplicationController
   def index
     @post = Post.all
@@ -51,4 +52,3 @@ class PostsController < ApplicationController
     params.require(:post).permit(:title, :body)
   end
 end
-
