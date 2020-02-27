@@ -1,8 +1,8 @@
-<h2>Edit order</h2>
+<%= react_component("Edit", current_user: current_user) %>
+
 <div class="content w-75 p-3">
   <% @order.build_detail %>
 
-  <%#= resource.build_details %>
   <%= simple_form_for @order,
                       wrapper: :horizontal_form,
                       wrapper_mappings: {

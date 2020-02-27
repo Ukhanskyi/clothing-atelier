@@ -12,22 +12,22 @@
     <%= f.error_notification %>
 
     <div class="container">
-      <%= f.input :name, class: 'form-control'%>
+      <%= f.input :name, input_html: { value: current_user.name }, class: 'form-control'%>
     </div>
     <div class="container">
-      <%= f.input :surname, class: 'form-control'%>
+      <%= f.input :surname, input_html: { value: current_user.surname }, class: 'form-control'%>
     </div>
     <div class="container">
-      <%= f.input :email, input_html: { autocomplete: 'email' }, class: 'form-control'%>
+      <%= f.input :email, input_html: { value: current_user.email }, class: 'form-control'%>
     </div>
     <div class="container">
-      <%= f.input :phone, prompt: "Enter phone number", class: 'form-control' %>
+      <%= f.input :phone, input_html: { value: current_user.phone }, prompt: "Enter phone number", class: 'form-control' %>
     </div>
     <div class="container">
-      <%= f.input :address, class: 'form-control'%>
+      <%= f.input :address, input_html: { value: current_user.address }, class: 'form-control'%>
     </div>
     <div class="container">
-      <%= f.input :gender, as: :radio_buttons, collection: [%w(true male), %w(false female)], label_method: :second, value_method: :first, class: 'form-control' %>
+      <%= f.input :gender, as: :radio_buttons, collection: [%w(true male), %w(false female)], checked: current_user.gender, label_method: :second, value_method: :first, class: 'form-control' %>
     </div>
 
     <!-- from another table using nested attribute -->
