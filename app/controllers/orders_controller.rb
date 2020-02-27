@@ -4,7 +4,8 @@ class OrdersController < ApplicationController
   before_action :find_order, only: %i[show edit update destroy]
 
   def index
-    @order = Order.all
+    @orders = Order.all
+    @order = current_user.orders.all
   end
 
   def new
