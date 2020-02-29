@@ -27,5 +27,6 @@ class User < ApplicationRecord
   validates :phone, presence: { message: 'Write your number in correct form!' },
                     numericality: true,
                     length: { within: 10...15 }
+  validates :gender, presence: true
   validates :address, presence: true, length: { maximum: 100 }
 end
