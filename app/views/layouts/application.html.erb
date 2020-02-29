@@ -27,24 +27,23 @@
 
   <body>
     <div class="header d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
-<!--      <h5 class="my-0 mr-md-auto font-weight-bold">CLOTHING ATELIER</h5>-->
-
       <button type="button" id="sidebarCollapse" class="my-0 mr-md-auto btn btn-light">
         <h5 class="my-0 mr-md-auto font-weight-bold">CLOTHING ATELIER</h5>
-        <!--            <span>CLOTHING ATELIER</span>-->
       </button>
 
       <nav class="my-2 my-md-0 mr-md-3">
         <a class="p-2 text-dark"> <%= link_to "Main page", home_path %></a>
         <a class="p-2 text-dark"> <%= link_to "About us", about_path %></a>
         <% if user_signed_in? %>
-          <a class="p-2 text-dark"> <%= link_to "New post", new_post_path %></a>
+          <% if current_user.admin? %>
+            <a class="p-2 text-dark"> <%= link_to "New post", new_post_path %></a>
+          <% end %>  
           <a class="p-2 text-dark"> <%= link_to "Basket", orders_path %></a>
-        <%end %>
+        <% end %>
       </nav>
 
       <% if user_signed_in? %>
-        <a class="p-2 text-dark"><%= link_to 'Profile', edit_user_registration_path, :class => 'navbar-link' %></a>
+        <a class="p-2 text-dark"><%= link_to 'Profile', edit_user_registration_path, class: 'navbar-link mr-2' %></a>
         <span class="btn-t btn btn-outline-primary"><%= link_to('Logout', destroy_user_session_path, method: :delete) %></span>
       <% else %>
         <span class="btn-t btn btn-outline-primary"><%= link_to('Login', new_user_session_path) %></span>
