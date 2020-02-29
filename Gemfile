@@ -46,8 +46,14 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger
   # console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  # Provides factory methods to create test fixtures for automated software
+  # testing
+  gem 'factory_bot_rails'
+  # A library for generating fake data
   gem 'faker'
+  # A library for Debuging project and fix bugs
   gem 'pry-byebug'
+  # Gem for testing application
   gem 'rspec-rails'
 end
 
