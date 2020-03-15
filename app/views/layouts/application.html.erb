@@ -26,40 +26,6 @@
   </head>
 
   <body>
-    <div class="header d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
-      <button type="button" id="sidebarCollapse" class="my-0 mr-md-auto btn btn-light">
-        <h5 class="my-0 mr-md-auto font-weight-bold">CLOTHING ATELIER</h5>
-      </button>
-
-      <nav class="my-2 my-md-0 mr-md-3">
-        <a class="p-2 text-dark"> <%= link_to "Main page", home_path %></a>
-        <a class="p-2 text-dark"> <%= link_to "About us", about_path %></a>
-        <% if user_signed_in? %>
-          <% if current_user.admin? %>
-            <a class="p-2 text-dark"> <%= link_to "New post", new_post_path %></a>
-          <% end %>  
-          <a class="p-2 text-dark"> <%= link_to "Basket", orders_path %></a>
-        <% end %>
-      </nav>
-
-      <% if user_signed_in? %>
-        <a class="p-2 text-dark"><%= link_to 'Profile', edit_user_registration_path, class: 'navbar-link mr-2' %></a>
-        <span class="btn-t btn btn-outline-primary"><%= link_to('Logout', destroy_user_session_path, method: :delete) %></span>
-      <% else %>
-        <span class="btn-t btn btn-outline-primary"><%= link_to('Login', new_user_session_path) %></span>
-        <span class="btn-t btn btn-outline-primary"><%= link_to('Register', sign_up_path) %></span>
-      <% end %>
-
-    </div>
-
-    <%= render "shared/left_menu" %>
-
-    <!-- jQuery CDN - Slim version (=without AJAX) -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <!-- Popper.JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
-    <!-- Bootstrap JS -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
-
+    <%= react_component("Main") %>
   </body>
 </html>

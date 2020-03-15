@@ -1,8 +1,14 @@
 # frozen_string_literal: true
 
 class PostsController < ApplicationController
+  before_action :find_post, only: %i[show edit update destroy]
+
   def index
     @post = Post.all
+    respond_to do |format|
+      format.html { Post.all }
+      format.json { render json: Post.all }
+    end
   end
 
   def new
@@ -10,39 +16,39 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
+    respond_to do |format|
+      format.html { @post }
+      format.json { render json: @post }
+    end
   end
 
-  def edit
-    @post = Post.find(params[:id])
-  end
+  def edit; end
 
   def update
-    @post = Post.find(params[:id])
-
     if @post.update(post_params)
-      redirect_to @post
+      format.html { redirect_to @post, notice: 'Post was successfully updated.' }
+      format.json { render :show, status: :ok, location: @post }
     else
-      render 'edit'
+      format.html { render :edit }
     end
   end
 
   def destroy
-    @post = Post.find(params[:id])
-
     @post.destroy
-    redirect_to posts_path
+    respond_to do |format|
+      format.html { redirect_to posts_path, notice: 'Post was successfully destroyed.' }
+      format.json { head :no_content }
+    end
   end
 
   def create
-    # render plain: params[:post].inspect
-
-    @post = Post.new(post_params)
-
-    if @post.save
-      redirect_to @post
-    else
-      render 'new'
+    respond_to do |format|
+      if @post.save
+        format.html { redirect_to @post, notice: 'Order was successfully created.' }
+        format.json { render :show, status: :created, location: @post }
+      else
+        format.html { render :new }
+      end
     end
   end
 
@@ -50,5 +56,9 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:title, :body)
+  end
+
+  def find_post
+    @post = Post.find(params[:id])
   end
 end
