@@ -1,5 +1,4 @@
 import React from 'react'
-import { Button } from 'semantic-ui-react'
 
 class Home extends React.Component {
   constructor(posts) {
@@ -25,7 +24,9 @@ class Home extends React.Component {
             <br></br>
             <p> {post.body} </p>
 
-            <Button className='btn btn-outline-primary'> Show post </Button>
+            <button className='btn btn-outline-primary'>
+              Show post
+            </button>
           </div>
         </div>
       )
