@@ -4,8 +4,12 @@ class OrdersController < ApplicationController
   before_action :find_order, only: %i[show edit update destroy]
 
   def index
-    @orders = Order.all
-    @order = current_user.orders.all
+    # @orders = Order.all
+    # render component: 'Orders', props: { orders: @orders }
+    respond_to do |format|
+      format.html { current_user.orders }
+      format.json { render json: current_user.orders, include: [:detail] }
+    end
   end
 
   def new
@@ -18,21 +22,32 @@ class OrdersController < ApplicationController
     render 'show'
   end
 
-  def show; end
+  def show
+    respond_to do |format|
+      format.html { @order }
+      format.json { render json: @order, include: 'detail' }
+    end
+  end
 
   def edit; end
 
   def update
-    if @order.update(order_params)
-      redirect_to @order
-    else
-      render 'edit'
+    respond_to do |format|
+      if @order.update(order_params)
+        format.html { redirect_to @order, notice: 'Order was successfully updated.' }
+        format.json { render :show, status: :ok, location: @order }
+      else
+        format.html { render :edit }
+      end
     end
   end
 
   def destroy
     @order.destroy
-    redirect_to orders_path
+    respond_to do |format|
+      format.html { redirect_to orders_path, notice: 'Order was successfully destroyed.' }
+      format.json { head :no_content }
+    end
   end
 
   def create
@@ -41,10 +56,13 @@ class OrdersController < ApplicationController
     @order = Order.new(order_params)
     @order.user_id = current_user.id
 
-    if @order.save
-      redirect_to @order
-    else
-      render 'new'
+    respond_to do |format|
+      if @order.save
+        format.html { redirect_to @order, notice: 'Order was successfully created.' }
+        format.json { render :show, status: :created, location: @order }
+      else
+        format.html { render :new }
+      end
     end
   end
 
