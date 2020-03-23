@@ -24,14 +24,14 @@ class Orders extends React.Component {
             <h3>Custommer: {order.name} {order.surname} </h3>
             <br></br>
 
-            <p><b>Email: </b> { order.email } </p>
+            <p><b>Email: </b> {order.email} </p>
             <p><b>Phone: </b> {order.phone} </p>
             <p><b>Clothing name: </b> {order.detail.clothing_name} </p>
             <p><b>Size: </b> {order.detail.size} </p>
             <p><b>Price: </b> {order.detail.price} </p>
 
             <div className="btn-group">
-              <Link to='/show'>
+              <Link to='/order'>
                 <button className='btn btn-outline-primary'>
                   Show order
                 </button>
@@ -45,7 +45,7 @@ class Orders extends React.Component {
       )
     })
     return (
-      <div>
+      <div className="container">
         <h1 className="row justify-content-center">All Orders</h1>
         {orders}
       </div>

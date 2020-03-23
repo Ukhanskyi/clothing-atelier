@@ -1,8 +1,9 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
-class Show extends React.Component {
-  constructor(orders) {
-    super(orders);
+class Order extends React.Component {
+  constructor(props) {
+    super(props);
     this.state = {
       orders: []
     };
@@ -26,7 +27,11 @@ class Show extends React.Component {
             <p><b>Email: </b> {order.email} </p>
             <p><b>Phone: </b> {order.phone} </p>
             <p><b>Address: </b> {order.address} </p>
-            <p><b>Gender: </b> {order.gender} </p>
+
+            <div>
+              { order.gender == true ? (<p><b>Gender: </b> Male </p>) : (<p><b>Gender: </b> Female </p>)}
+            </div>
+
             <hr></hr>
             <p><b>Clothing name: </b> {order.detail.clothing_name} </p>
             <p><b>Color: </b> {order.detail.color} </p>
@@ -36,15 +41,17 @@ class Show extends React.Component {
             <p><b>Size: </b> {order.detail.size} </p>
             <p><b>Price: </b> {order.detail.price} </p>
 
-            <button className='btn btn-outline-primary'>
-              Edit order
-            </button>
+            <Link to="/edit">
+              <button className='btn btn-outline-primary'>
+                Edit order
+              </button>
+            </Link>
           </div>
         </div>
       )
     })
     return (
-      <div>
+      <div className="container">
         <h1 className="row justify-content-center">Current order</h1>
         {order}
       </div>
@@ -52,4 +59,4 @@ class Show extends React.Component {
   }
 }
 
-export default Show
+export default Order

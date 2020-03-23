@@ -4,8 +4,6 @@ class OrdersController < ApplicationController
   before_action :find_order, only: %i[show edit update destroy]
 
   def index
-    # @orders = Order.all
-    # render component: 'Orders', props: { orders: @orders }
     respond_to do |format|
       format.html { current_user.orders }
       format.json { render json: current_user.orders, include: [:detail] }
