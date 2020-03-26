@@ -32,9 +32,11 @@ class Home extends React.Component {
       )
     })
     return (
-      <div className="container">
-        <h2 className="row justify-content-center">News about us</h2>
-        {posts}
+      <div className="content">
+        <div className="container">
+          <h2 className="row justify-content-center">News about us</h2>
+          {posts}
+        </div>
       </div>
     )
   }
