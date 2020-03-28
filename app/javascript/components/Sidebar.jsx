@@ -1,52 +1,83 @@
 import React from 'react'
-import { Dropdown, MenuItem, DropdownButton } from "react-bootstrap";
+import { NavLink } from "react-router-dom"
+import FontAwesome from 'react-fontawesome'
+import Collapsible from './Collapsible'
 
+export default class Sidebar extends React.Component {
+  constructor(props) {
+    super(props);
+  }
 
-function Sidebar({ items }) {
-  return (
-    <div className="sidebar">
-      <Dropdown className="mw-25">
-        <Dropdown.Toggle variant="Secondary" id="dropdown-basic" className="mw-25">
-          Man
-        </Dropdown.Toggle>
-        <Dropdown.Menu className="mw-25">
-          <Dropdown.Item href="#/s">Coats</Dropdown.Item>
-          <Dropdown.Item href="#/s">Jackets</Dropdown.Item>
-          <Dropdown.Item href="#/s">Jeans</Dropdown.Item>
-          <Dropdown.Item href="#/s">Jumpers</Dropdown.Item>
-          <Dropdown.Item href="#/s">Hoodies</Dropdown.Item>
-          <Dropdown.Item href="#/s">Shirts</Dropdown.Item>
-          <Dropdown.Item href="#/s">Shorts</Dropdown.Item>
-          <Dropdown.Item href="#/s">Suits</Dropdown.Item>
-          <Dropdown.Item href="#/s">Sweaters</Dropdown.Item>
-          <Dropdown.Item href="#/s">Ties</Dropdown.Item>
-          <Dropdown.Item href="#/s">Trousers</Dropdown.Item>
-          <Dropdown.Item href="#/s">T-Shirts</Dropdown.Item>
-        </Dropdown.Menu>
-      </Dropdown>
+  render() {
+    return (
+      <div>
+        <div>
+          <Collapsible button={
+            <button className="menu btn btn-light">
+              <div>
+                <FontAwesome
+                  className="fa fa-male mr-2"
+                  name="male"
+                  size="2x"
+                  style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
+                />
+                Man clothes
+              </div>
+            </button>
+          }>
+            <div>
+              <ul>
+                <NavLink to="#/s">Coats</NavLink><br />
+                <NavLink to="#/s">Jackets</NavLink><br />
+                <NavLink to="#/s">Jeans</NavLink><br />
+                <NavLink to="#/s">Jumpers</NavLink><br />
+                <NavLink to="#/s">Hoodies</NavLink><br />
+                <NavLink to="#/s">Shirts</NavLink><br />
+                <NavLink to="#/s">Shorts</NavLink><br />
+                <NavLink to="#/s">Suits</NavLink><br />
+                <NavLink to="#/s">Sweaters</NavLink><br />
+                <NavLink to="#/s">Ties</NavLink><br />
+                <NavLink to="#/s">Trousers</NavLink><br />
+                <NavLink to="#/s"><nobr>T-Shirts</nobr></NavLink><br />
+              </ul>
+            </div>
+          </Collapsible>
+        </div>
 
-      <Dropdown>
-        <Dropdown.Toggle variant="Secondary" id="dropdown-basic">
-          Woman
-        </Dropdown.Toggle>
-        <Dropdown.Menu>
-          <Dropdown.Item href="#/s">Coats</Dropdown.Item>
-          <Dropdown.Item href="#/s">Dresses</Dropdown.Item>
-          <Dropdown.Item href="#/s">Jackets</Dropdown.Item>
-          <Dropdown.Item href="#/s">Jeans</Dropdown.Item>
-          <Dropdown.Item href="#/s">Jumpers</Dropdown.Item>
-          <Dropdown.Item href="#/s">Hoodies</Dropdown.Item>
-          <Dropdown.Item href="#/s">Shirts</Dropdown.Item>
-          <Dropdown.Item href="#/s">Shorts</Dropdown.Item>
-          <Dropdown.Item href="#/s">Skirts</Dropdown.Item>
-          <Dropdown.Item href="#/s">Suits</Dropdown.Item>
-          <Dropdown.Item href="#/s">Sweaters</Dropdown.Item>
-          <Dropdown.Item href="#/s">Trousers</Dropdown.Item>
-          <Dropdown.Item href="#/s">T-Shirts</Dropdown.Item>
-        </Dropdown.Menu>
-      </Dropdown>
-    </div>
-  )
+        <div>
+          <Collapsible button={
+            <button className="menu btn btn-light">
+              <div>
+                <FontAwesome
+                  className="fa fa-female mr-2"
+                  name="female"
+                  size="2x"
+                  style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
+                />
+                Woman clothes
+              </div>
+            </button>
+          }>
+            <div>
+              <ul>
+                <NavLink to="#/s">Coats</NavLink><br />
+                <NavLink to="#/s">Dresses</NavLink><br />
+                <NavLink to="#/s">Jackets</NavLink><br />
+                <NavLink to="#/s">Jeans</NavLink><br />
+                <NavLink to="#/s">Jumpers</NavLink><br />
+                <NavLink to="#/s">Hoodies</NavLink><br />
+                <NavLink to="#/s">Shirts</NavLink><br />
+                <NavLink to="#/s">Shorts</NavLink><br />
+                <NavLink to="#/s">Skirts</NavLink><br />
+                <NavLink to="#/s">Suits</NavLink><br />
+                <NavLink to="#/s">Sweaters</NavLink><br />
+                <NavLink to="#/s">Trousers</NavLink><br />
+                <NavLink to="#/s"><nobr>T-Shirts</nobr></NavLink><br />
+              </ul>
+            </div>
+          </Collapsible>
+        </div>
+      </div>
+    );
+  }
 }
-
-export default Sidebar

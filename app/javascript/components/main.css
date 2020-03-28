@@ -6,3 +6,7 @@
 .sidebar-subitem-text {
   font-size: 0.8rem;
 }
+
+.dropdown-toggle::after {
+    display:none;
+}

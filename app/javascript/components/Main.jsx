@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
 import { BrowserRouter, Route } from 'react-router-dom'
+import FontAwesome from 'react-fontawesome'
 import './main.css'
 
 import Header from './Header.jsx'
-import Sidebar from './Sidebar.jsx'
 import Home from './Home.jsx'
+import Collapsible from './Collapsible'
+import Sidebar from './Sidebar.jsx'
 import About from './About.jsx'
 import Orders from './order/Orders.jsx'
 import Order from './order/Order.jsx'
@@ -50,37 +52,28 @@ import Order from './order/Order.jsx'
 //   },
 // ]
 
-export default class Main extends Component {
-
-  state = {
-    on: false,
-  }
-
-  toggle = () => {
-    this.setState({
-      on: !this.state.on
-    })
+export default class Main extends React.Component {
+  constructor(props) {
+    super(props);
   }
 
   render() {
     return (
       <BrowserRouter>
-        <div>
-          <Header>
-            <button onClick={this.toggle} type="button" id="sidebarCollapse" className="my-0 mr-md-auto btn btn-light">
-              <h5 className="my-0 mr-md-auto font-weight-bold">CLOTHING ATELIER</h5>
-            </button>
-          </Header>
-
-          <div className="row w-100">
-            <div className="container col-md-2">
-              <button onClick={this.toggle} type="button" id="sidebarCollapse" className="my-0 mr-md-auto btn btn-light">
-                <h5 className="my-0 mr-md-auto font-weight-bold">CLOTHING ATELIER</h5>
-              </button>
-              {this.state.on && (
-                <Sidebar />
-              )}
+        <Header className="w-100" />
+        <div className="row w-100">
+          <Collapsible button={
+            <FontAwesome
+              className="fa fa-bars ml-4"
+              name="bars"
+              size="2x"
+              style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
+            />
+          }>
+            <div className="ml-2 col-md-2">
+              <Sidebar />
             </div>
+          </Collapsible>  
 
             {/********************************Add routing******************************/}
             <div className="container col-md-9">
@@ -91,7 +84,6 @@ export default class Main extends Component {
                 <Route path='/order' component={Order} />
               </div>
             </div>
-          </div>
         </div>
       </BrowserRouter>
     );
