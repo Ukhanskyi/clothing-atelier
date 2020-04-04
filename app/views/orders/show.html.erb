@@ -1,16 +1,11 @@
-<%# <%= react_component("Edit", current_user: current_user) %> %>
 <div class="alert alert-light">
   <h3><b><%= @order.surname %> <%= @order.name %></b></h3>
   <p></p>
   <p><b>Email:</b> <%= @order.email %></p>
   <p><b>Phone number:</b> <%= @order.phone %></p>
   <p><b>Address:</b> <%= @order.address %></p>
-  <% if @order.gender == true %>
-    <p><b>Your gender:</b> man</p>
-  <% else %>
-    <p><b>Your gender:</b> woman</p>
-  <% end %>
-<hr>
+  <p><b>Your gender:</b> <%= @order.gender.capitalize %></p>
+  <hr>
   <p><b>Clothing name:</b> <%= @order.detail.clothing_name %></p>
   <p><b>Color:</b> <%= @order.detail.color %></p>
   <p><b>Collar:</b> <%= @order.detail.collar %></p>
