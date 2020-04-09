@@ -1,3 +1,13 @@
+<% provide :head_tags do %>
+  <meta name='turbolinks-visit-control' content='reload'>
+
+  <script>
+      document.addEventListener("DOMContentLoaded", function(){
+          initMap(49.048587,23.771681)
+      });
+  </script>
+<% end %>
+
 <div class="content mt-5 center">
   <div class="row justify-content-center">
     <h2> What we are trying to do </h2>
@@ -32,11 +42,40 @@
     </div>
   </div>
 
+  <!--
+    <div class="content">
+      <br>
+      <h2 class="row justify-content-center"> You can find us here </h2><br>
+      <div class="content">
+        <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=16&size=515x200&scale=2&markers=size:small%7Ccolor:red%7C49.048587,23.771681&key=AIzaSyDNsLvtWiV3PBz11AAjbEM7MTf5nA8jNl4", alt: "Map" %>
+      </div><br>
+    </div>
+  -->
+
   <div class="content">
     <br>
     <h2 class="row justify-content-center"> You can find us here </h2><br>
-    <div class="content">
-      <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=16&size=515x200&scale=2&markers=size:small%7Ccolor:red%7C49.048587,23.771681&key=AIzaSyDNsLvtWiV3PBz11AAjbEM7MTf5nA8jNl4", alt: "Map" %>
-    </div><br>
+    <p>
+      <div id="map"></div>
+    </p><br><br>
   </div>
+
+  <script>
+    function initMap(lat, lng) {
+      var myCoords = new google.maps.LatLng(lat, lng);
+
+      var mapOptions = {
+        center: myCoords,
+        zoom: 17
+      };
+
+      var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+
+      var marker = new google.maps.Marker({
+        position: myCoords,
+        map: map
+      });
+    }
+  </script>
+
 </div>
