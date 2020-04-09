@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 2020_02_20_144102) do
     t.string "email"
     t.string "phone"
     t.string "address"
-    t.boolean "gender"
+    t.string "gender"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "state"
@@ -59,7 +59,7 @@ ActiveRecord::Schema.define(version: 2020_02_20_144102) do
     t.boolean "admin", default: false
     t.string "name"
     t.string "surname"
-    t.boolean "gender"
+    t.string "gender"
     t.string "phone", limit: 13
     t.string "address"
     t.string "size_clothing"

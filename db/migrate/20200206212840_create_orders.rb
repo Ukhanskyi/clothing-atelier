@@ -9,7 +9,7 @@ class CreateOrders < ActiveRecord::Migration[6.0]
       t.string :email
       t.string :phone
       t.string :address
-      t.boolean :gender
+      t.string :gender
       t.timestamps
     end
   end

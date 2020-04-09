@@ -22,10 +22,17 @@
     <%= stylesheet_link_tag 'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css', media: 'all',
                             'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+    <%= javascript_include_tag 'https://maps.googleapis.com/maps/api/js?key=AIzaSyAoWHX3pNY_BLZKJVC91x63yzSsiXwinMI' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <%= yield(:head_tags) %>
+
   </head>
 
   <body>
+    <!-- <%= react_component("Main", user_id: @user ? @user.id : nil) %> -->
+
     <div class="header d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
       <button type="button" id="sidebarCollapse" class="my-0 mr-md-auto btn btn-light">
         <h5 class="my-0 mr-md-auto font-weight-bold">CLOTHING ATELIER</h5>

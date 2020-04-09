@@ -27,7 +27,7 @@
       <%= f.input :address, input_html: { value: current_user.address }, class: 'form-control'%>
     </div>
     <div class="container">
-      <%= f.input :gender, as: :radio_buttons, collection: [%w(true male), %w(false female)], checked: current_user.gender, label_method: :second, value_method: :first, class: 'form-control' %>
+      <%= f.input :gender, as: :radio_buttons, collection: [%w(male Male), %w(female Female)], checked: current_user.gender, label_method: :second, value_method: :first, class: 'form-control' %>
     </div>
 
     <!-- from another table using nested attribute -->
