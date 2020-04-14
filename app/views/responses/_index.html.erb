@@ -1,0 +1,17 @@
+<div>
+  <% Response.all.each do |response| %>
+    <hr>
+    <div class="alert alert-light">
+      <h3><%= response.name %> <%= response.surname %></h3>
+      <p><%= response.body %></p>
+      <div class="w-25%">
+        <img class="response_img" src="<%= response.nested_files %>">
+      </div>
+      <br>
+      <% if current_user.id == response.author_id %>
+        <!-- <%= link_to "Edit", response_path(response), class: 'btn btn-outline-warning' %> -->
+        <%= link_to "Destroy", response, method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-outline-danger' %>
+      <% end %>
+    </div>
+  <% end %>
+</div>

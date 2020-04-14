@@ -1,0 +1,32 @@
+<div class="container">
+  <%= simple_form_for :response, url: responses_path do |r| %>
+    <%= r.error_notification %>
+
+    <div class="btn-group">
+      <div class="container">
+        <%= r.input :name, input_html: { value: current_user.name }, class: 'form-control'%>
+      </div>
+
+      <div class="container ml-2">
+        <%= r.input :surname, input_html: { value: current_user.surname }, class: 'form-control'%>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="w-50">
+        <%= r.input :body, as: :text %>
+      </div>
+    </div>
+
+        <div class="container">
+      <div class="w-50">
+        <%= r.input :nested_files, as: :file %>
+      </div>
+    </div>
+
+
+    <div class="container">
+      <%= r.submit("Create response", {class: 'btn btn-outline-primary mt-2'})%>
+    </div>
+  <% end %>
+</div>
