@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="row justify-content-end">
+    <button type="button" class="btn btn-light mr-3" data-toggle="modal" data-target="#myModal">
+      Count my size
+    </button>
+  </div>
+
+  <!-- The Modal -->
+  <div class="modal" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">You can calculate your size here</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body">
+          <h5 class="row justify-content-center">Please enter next data: <h5>
+          <br/>
+          <%= simple_form_for :calculate_size do |s| %>
+            <%= s.input :height, label: "Enter your height", class: 'form-control' %>
+            <%= s.input :breast, label: "Enter your breast girth", class: 'form-control' %>
+            <%= s.input :waist, label: "Enter your waist girth", class: 'form-control' %>
+            <%= s.input :tight, label: "Enter your thigh girth", class: 'form-control' %>
+            <%= s.submit("Calculate", {class: 'btn btn-outline-success'}) %>
+          <% end %>
+        </div>
+
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+<br/>
