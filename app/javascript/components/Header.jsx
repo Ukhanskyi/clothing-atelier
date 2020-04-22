@@ -1,6 +1,5 @@
 import React from 'react'
 import { NavLink } from "react-router-dom"
-// import ClothingAtelierButton from './ClothingAtelierButton.jsx'
 
 export default class Header extends React.Component {
   constructor(props) {
@@ -14,11 +13,6 @@ export default class Header extends React.Component {
         <button type="button" id="sidebarCollapse" className="my-0 mr-md-auto btn btn-light">
           <h5 className="my-0 mr-md-auto font-weight-bold">CLOTHING ATELIER</h5>
         </button>
-
-        {/* <button type="button" id="sidebarCollapse" className="my-0 mr-md-auto btn btn-light">
-        <h5 className="my-0 mr-md-auto font-weight-bold">CLOTHING ATELIER</h5>
-      </button> */}
-        {/* </link> */}
 
         <nav className="my-2 my-md-0 mr-md-3">
           <NavLink to='/' className="p-2 text-dark">Home </NavLink>

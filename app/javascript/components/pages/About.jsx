@@ -1,4 +1,5 @@
 import React from 'react'
+import MapComponent from './MapContainer'
 
 const About = () => {
   return (
@@ -34,8 +35,19 @@ const About = () => {
                 going to wear I usually think what kind of meeting I have. At school we weren’t allowed to wear sport or bright
                 clothes, we had to wear clothes of formal style. Usually I wore a jacket, a blouse and trousers or a skirt. But I
                 didn't like being dressed that way, as many other students. Really I prefer smart clothes to formal.
-            </p>
+              </p>
             </div>
+
+            <br />
+
+            <div>
+              <h3 className="row justify-content-center"> You can find us here </h3>
+              <br />
+              <MapComponent />
+              <br />
+            </div>
+
+
           </div>
         </div>
       </div>
