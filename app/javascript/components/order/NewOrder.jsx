@@ -13,38 +13,38 @@ const NewOrder = ({ current_user }) => (
           <form>
             <div className=" row group mt-1">
               <h6 className="my-auto col-sm-3">Name: </h6>
-              <input type="text" name="name" defaultValue={current_user.name} className="form-control col-md-6" />
+              <input type="text" className="form-control col-md-6" />
             </div>
 
             <div className=" row group mt-1">
               <h6 className="my-auto col-sm-3">Surame: </h6>
-              <input type="text" name="surname" defaultValue={current_user.surname} className="form-control col-md-6" />
+              <input type="text" className="form-control col-md-6" />
             </div>
 
             <div className=" row group mt-1">
               <h6 className="my-auto col-sm-3">Email: </h6>
-              <input type="text" name="email" defaultValue={current_user.email} className="form-control col-md-6" />
+              <input type="text" className="form-control col-md-6" />
             </div>
 
             <div className=" row group mt-1">
               <h6 className="my-auto col-sm-3">Phone: </h6>
-              <input type="number" name="phone" defaultValue={current_user.phone} className="form-control col-md-6" />
+              <input type="number" className="form-control col-md-6" />
             </div>
 
             <div className=" row group mt-1">
               <h6 className="my-auto col-sm-3">Address: </h6>
-              <input type="text" name="address" defaultValue={current_user.address} className="form-control col-md-6" />
+              <input type="text" className="form-control col-md-6" />
             </div>
 
             <div className="row group mt-1">
               <h6 className="my-auto col-sm-3">Your gender: </h6>
-              <input type="radio" value="male" name="gender" className="mt-1" /> Male
-            <input type="radio" value="female" name="gender" className="ml-3 mt-1" /> Female
+              <input type="radio" value="male" className="mt-1" /> Male
+            <input type="radio" value="female" className="ml-3 mt-1" /> Female
           </div>
 
             <div className=" row group mt-1">
               <h6 className="my-auto col-sm-3">Clothing name: </h6>
-              <input type="text" name="clothing_name" placeholder='Please enter clothing name' className="form-control col-md-6" />
+              <input type="text" placeholder='Please enter clothing name' className="form-control col-md-6" />
             </div>
 
             <div className=" row group mt-1">

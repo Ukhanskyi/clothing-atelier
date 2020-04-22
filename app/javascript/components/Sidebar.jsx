@@ -27,18 +27,18 @@ export default class Sidebar extends React.Component {
           }>
             <div>
               <ul>
-                <NavLink to="#/s">Coats</NavLink><br />
-                <NavLink to="#/s">Jackets</NavLink><br />
-                <NavLink to="#/s">Jeans</NavLink><br />
-                <NavLink to="#/s">Jumpers</NavLink><br />
-                <NavLink to="#/s">Hoodies</NavLink><br />
-                <NavLink to="#/s">Shirts</NavLink><br />
-                <NavLink to="#/s">Shorts</NavLink><br />
-                <NavLink to="#/s">Suits</NavLink><br />
-                <NavLink to="#/s">Sweaters</NavLink><br />
-                <NavLink to="#/s">Ties</NavLink><br />
-                <NavLink to="#/s">Trousers</NavLink><br />
-                <NavLink to="#/s"><nobr>T-Shirts</nobr></NavLink><br />
+                <NavLink to="/new">Coats</NavLink><br />
+                <NavLink to="/new">Jackets</NavLink><br />
+                <NavLink to="/new">Jeans</NavLink><br />
+                <NavLink to="/new">Jumpers</NavLink><br />
+                <NavLink to="/new">Hoodies</NavLink><br />
+                <NavLink to="/new">Shirts</NavLink><br />
+                <NavLink to="/new">Shorts</NavLink><br />
+                <NavLink to="/new">Suits</NavLink><br />
+                <NavLink to="/new">Sweaters</NavLink><br />
+                <NavLink to="/new">Ties</NavLink><br />
+                <NavLink to="/new">Trousers</NavLink><br />
+                <NavLink to="/new"><nobr>T-Shirts</nobr></NavLink><br />
               </ul>
             </div>
           </Collapsible>
@@ -60,19 +60,19 @@ export default class Sidebar extends React.Component {
           }>
             <div>
               <ul>
-                <NavLink to="#/s">Coats</NavLink><br />
-                <NavLink to="#/s">Dresses</NavLink><br />
-                <NavLink to="#/s">Jackets</NavLink><br />
-                <NavLink to="#/s">Jeans</NavLink><br />
-                <NavLink to="#/s">Jumpers</NavLink><br />
-                <NavLink to="#/s">Hoodies</NavLink><br />
-                <NavLink to="#/s">Shirts</NavLink><br />
-                <NavLink to="#/s">Shorts</NavLink><br />
-                <NavLink to="#/s">Skirts</NavLink><br />
-                <NavLink to="#/s">Suits</NavLink><br />
-                <NavLink to="#/s">Sweaters</NavLink><br />
-                <NavLink to="#/s">Trousers</NavLink><br />
-                <NavLink to="#/s"><nobr>T-Shirts</nobr></NavLink><br />
+                <NavLink to="/new">Coats</NavLink><br />
+                <NavLink to="/new">Dresses</NavLink><br />
+                <NavLink to="/new">Jackets</NavLink><br />
+                <NavLink to="/new">Jeans</NavLink><br />
+                <NavLink to="/new">Jumpers</NavLink><br />
+                <NavLink to="/new">Hoodies</NavLink><br />
+                <NavLink to="/new">Shirts</NavLink><br />
+                <NavLink to="/new">Shorts</NavLink><br />
+                <NavLink to="/new">Skirts</NavLink><br />
+                <NavLink to="/new">Suits</NavLink><br />
+                <NavLink to="/new">Sweaters</NavLink><br />
+                <NavLink to="/new">Trousers</NavLink><br />
+                <NavLink to="/new"><nobr>T-Shirts</nobr></NavLink><br />
               </ul>
             </div>
           </Collapsible>

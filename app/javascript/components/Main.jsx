@@ -10,6 +10,7 @@ import Sidebar from './Sidebar.jsx'
 import About from './About.jsx'
 import Orders from './order/Orders.jsx'
 import Order from './order/Order.jsx'
+import NewOrder from './order/NewOrder'
 
 // const items = [
 //   // { name: 'home', label: 'Home' },
@@ -82,6 +83,8 @@ export default class Main extends React.Component {
                 <Route path='/about' component={About} />
                 <Route path='/orders' component={Orders} />
                 <Route path='/order' component={Order} />
+                <Route path='/new' component={NewOrder} />
+
               </div>
             </div>
         </div>
