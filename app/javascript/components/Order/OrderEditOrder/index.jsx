@@ -1,17 +1,18 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
+import './styles'
 
-const Edit = ({current_user}) => (
+const OrderEditOrder = ({current_user}) => (
     <div><h2>Edit {current_user.name}'s {current_user.surname} order</h2></div>
 )
 
-Edit.defaultProps = {
+OrderEditOrder.defaultProps = {
     name: 'Incognito'
 }
 
-Edit.propTypes = {
+OrderEditOrder.propTypes = {
     name: PropTypes.string
 }
 
-export default Edit
+export default OrderEditOrder

@@ -1,4 +1,5 @@
 import React from 'react'
+import './styles.css'
 
 export default class Home extends React.Component {
   constructor(posts) {
@@ -40,5 +41,4 @@ export default class Home extends React.Component {
       </div>
     )
   }
-
 }

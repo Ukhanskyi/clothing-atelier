@@ -1,7 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import './styles'
 
-class Orders extends React.Component {
+class OrderList extends React.Component {
   constructor(orders) {
     super(orders);
     this.state = {
@@ -53,4 +54,4 @@ class Orders extends React.Component {
   }
 }
 
-export default Orders
+export default OrderList

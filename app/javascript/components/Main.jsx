@@ -3,14 +3,14 @@ import { BrowserRouter, Route } from 'react-router-dom'
 import FontAwesome from 'react-fontawesome'
 import './main.css'
 
-import Header from './Header.jsx'
-import Home from './Home.jsx'
+import Header from './Header'
+import Home from './Home'
 import Collapsible from './Collapsible'
-import Sidebar from './Sidebar.jsx'
-import About from './pages/About.jsx'
-import Orders from './order/Orders.jsx'
-import Order from './order/Order.jsx'
-import NewOrder from './order/NewOrder'
+import Sidebar from './Sidebar'
+import About from './About'
+import OrderList from './Order/OrderList'
+import OrderSingleOrder from './Order/OrderSingleOrder'
+import OrderNewOrder from './Order/OrderNewOrder'
 
 // const items = [
 //   // { name: 'home', label: 'Home' },
@@ -80,10 +80,10 @@ export default class Main extends React.Component {
             <div className="container col-md-9">
               <div id="content">
                 <Route path='//' component={Home} />
-                <Route path='/about' component={About} />
-                <Route path='/orders' component={Orders} />
-                <Route path='/order' component={Order} />
-                <Route path='/new' component={NewOrder} />
+                <Route path='/about-us' component={About} />
+                <Route path='/orders-list' component={OrderList} />
+                <Route path='/single-order' component={OrderSingleOrder} />
+                <Route path='/new-order' component={OrderNewOrder} />
 
               </div>
             </div>

@@ -1,7 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import './styles';
 
-class Order extends React.Component {
+class OrderSingleOrder extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -59,4 +60,4 @@ class Order extends React.Component {
   }
 }
 
-export default Order
+export default OrderSingleOrder

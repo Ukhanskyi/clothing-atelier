@@ -1,5 +1,6 @@
 import React from 'react'
 import MapComponent from './MapContainer'
+import './styles'
 
 const About = () => {
   return (
@@ -35,7 +36,7 @@ const About = () => {
                 going to wear I usually think what kind of meeting I have. At school we weren’t allowed to wear sport or bright
                 clothes, we had to wear clothes of formal style. Usually I wore a jacket, a blouse and trousers or a skirt. But I
                 didn't like being dressed that way, as many other students. Really I prefer smart clothes to formal.
-              </p>
+            </p>
             </div>
 
             <br />
@@ -46,7 +47,6 @@ const About = () => {
               <MapComponent />
               <br />
             </div>
-
 
           </div>
         </div>
