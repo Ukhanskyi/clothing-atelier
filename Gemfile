@@ -40,7 +40,7 @@ gem 'carrierwave'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
-
+# .ENV add same salt to your secret data
 gem 'dotenv-rails', groups: %i[development test]
 
 # Using react-rails gem with webpacker

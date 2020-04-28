@@ -31,6 +31,6 @@
   </head>
 
   <body>
-    <%= react_component("Main", user_id: @user ? @user.id : nil) %>
+    <%= react_component("Main", current_user) %>
   </body>
 </html>

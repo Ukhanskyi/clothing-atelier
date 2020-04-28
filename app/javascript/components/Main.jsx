@@ -12,46 +12,6 @@ import OrderList from './Order/OrderList'
 import OrderSingleOrder from './Order/OrderSingleOrder'
 import OrderNewOrder from './Order/OrderNewOrder'
 
-// const items = [
-//   // { name: 'home', label: 'Home' },
-//   {
-//     name: 'man',
-//     label: 'Man clothing',
-//     items: [
-//       { name: 'coats', label: 'Coats' },
-//       { name: 'jackets', label: 'Jackets' },
-//       { name: 'jeans', label: 'Jeans' },
-//       { name: 'jumpers', label: 'Jumpers' },
-//       { name: 'hoodies', label: 'Hoodies' },
-//       { name: 'shirts', label: 'Shirts' },
-//       { name: 'shorts', label: 'Shorts' },
-//       { name: 'suits', label: 'Suits' },
-//       { name: 'sweaters', label: 'Sweaters' },
-//       { name: 'ties', label: 'Ties' },
-//       { name: 'trousers', label: 'Trousers' },
-//       { name: 't-shirts', label: 'T-Shirts' },
-//     ],
-//   },
-//   {
-//     name: 'woman',
-//     label: 'Woman clothing',
-//     items: [
-//       { name: 'coats', label: 'Coats' },
-//       { name: 'dresses', label: 'Dresses' },
-//       { name: 'jackets', label: 'Jackets' },
-//       { name: 'jeans', label: 'Jeans' },
-//       { name: 'jumpers', label: 'Jumpers' },
-//       { name: 'hoodies', label: 'Hoodies' },
-//       { name: 'shirts', label: 'Shirts' },
-//       { name: 'shorts', label: 'Shorts' },
-//       { name: 'skirts', label: 'Skirts' },
-//       { name: 'suits', label: 'Suits' },
-//       { name: 'sweaters', label: 'Sweaters' },
-//       { name: 'trousers', label: 'Trousers' },
-//       { name: 't-shirts', label: 'T-Shirts' },
-//     ],
-//   },
-// ]
 
 export default class Main extends React.Component {
   constructor(props) {

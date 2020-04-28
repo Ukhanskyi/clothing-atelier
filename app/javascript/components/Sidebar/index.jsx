@@ -3,12 +3,19 @@ import { Link } from "react-router-dom"
 import FontAwesome from 'react-fontawesome'
 import Collapsible from '../Collapsible'
 import {
-  JEANS,
-  HOODIE,
-  SWEATER,
-  SHIRT,
-  TSHIRT,
+  COAT,
+  DRESS,
   JACKET,
+  JEANS,
+  JUMPER,
+  HOODIE,
+  SHIRT,
+  SHORTS,
+  SKIRT,
+  SUIT,
+  SWEATER,
+  TROUSERS,
+  TSHIRT,
   MAN,
   WOMAN,
 } from '../../types';
@@ -38,7 +45,33 @@ export default class Sidebar extends React.Component {
           }>
             <div>
               <ul>
-              <Link
+                <Link
+                  to={{
+                    pathname: '/new-order',
+                    state: {
+                      type: COAT,
+                      gender: MAN,
+                    }
+                  }}
+                >
+                  Coat
+                </Link>
+                <br />
+
+                <Link
+                  to={{
+                    pathname: '/new-order',
+                    state: {
+                      type: JACKET,
+                      gender: MAN,
+                    }
+                  }}
+                >
+                  Jacket
+                </Link>
+                <br />
+
+                <Link
                   to={{
                     pathname: '/new-order',
                     state: {
@@ -48,6 +81,19 @@ export default class Sidebar extends React.Component {
                   }}
                 >
                   Jeans
+                </Link>
+                <br />
+
+                <Link
+                  to={{
+                    pathname: '/new-order',
+                    state: {
+                      type: JUMPER,
+                      gender: MAN,
+                    }
+                  }}
+                >
+                  Jumper
                 </Link>
                 <br />
                 
@@ -60,7 +106,60 @@ export default class Sidebar extends React.Component {
                     }
                   }}
                 >
-                  Hoodies
+                  Hoodie
+                </Link>
+                <br />
+
+                <Link
+                  to={{
+                    pathname: '/new-order',
+                    state: {
+                      type: SHIRT,
+                      gender: MAN,
+                    }
+                  }}
+                >
+                  Shirt
+                </Link>
+                <br />
+
+                <Link
+                  to={{
+                    pathname: '/new-order',
+                    state: {
+                      type: SHORTS,
+                      gender: MAN,
+                    }
+                  }}
+                >
+                  Shorts
+                </Link>
+                <br />
+
+
+                {/* <Link
+                  to={{
+                    pathname: '/new-order',
+                    state: {
+                      type: SKIRT,
+                      gender: MAN,
+                    }
+                  }}
+                >
+                  Swith skirt
+                </Link>
+                <br /> */}
+
+                <Link
+                  to={{
+                    pathname: '/new-order',
+                    state: {
+                      type: SUIT,
+                      gender: MAN,
+                    }
+                  }}
+                >
+                  Suit
                 </Link>
                 <br />
 
@@ -81,12 +180,12 @@ export default class Sidebar extends React.Component {
                   to={{
                     pathname: '/new-order',
                     state: {
-                      type: SHIRT,
+                      type: TROUSERS,
                       gender: MAN,
                     }
                   }}
                 >
-                  Shirts
+                  Trousers
                 </Link>
                 <br />
 
@@ -103,18 +202,6 @@ export default class Sidebar extends React.Component {
                 </Link>
                 <br />
 
-                <Link
-                  to={{
-                    pathname: '/new-order',
-                    state: {
-                      type: JACKET,
-                      gender: MAN,
-                    }
-                  }}
-                >
-                  Jackets
-                </Link>
-                <br />
               </ul>
             </div>
           </Collapsible>
@@ -140,6 +227,45 @@ export default class Sidebar extends React.Component {
                   to={{
                     pathname: '/new-order',
                     state: {
+                      type: COAT,
+                      gender: WOMAN,
+                    }
+                  }}
+                >
+                  Coat
+                </Link>
+                <br />
+
+                <Link
+                  to={{
+                    pathname: '/new-order',
+                    state: {
+                      type: DRESS,
+                      gender: WOMAN,
+                    }
+                  }}
+                >
+                  Dress
+                </Link>
+                <br />
+
+                <Link
+                  to={{
+                    pathname: '/new-order',
+                    state: {
+                      type: JACKET,
+                      gender: WOMAN,
+                    }
+                  }}
+                >
+                  Jacket
+                </Link>
+                <br />
+
+                <Link
+                  to={{
+                    pathname: '/new-order',
+                    state: {
                       type: JEANS,
                       gender: WOMAN,
                     }
@@ -153,12 +279,12 @@ export default class Sidebar extends React.Component {
                   to={{
                     pathname: '/new-order',
                     state: {
-                      type: HOODIE,
+                      type: JUMPER,
                       gender: WOMAN,
                     }
                   }}
                 >
-                  Hoodies
+                  Jumper
                 </Link>
                 <br />
 
@@ -166,12 +292,12 @@ export default class Sidebar extends React.Component {
                   to={{
                     pathname: '/new-order',
                     state: {
-                      type: SWEATER,
+                      type: HOODIE,
                       gender: WOMAN,
                     }
                   }}
                 >
-                  Sweaters
+                  Hoodie
                 </Link>
                 <br />
 
@@ -184,7 +310,72 @@ export default class Sidebar extends React.Component {
                     }
                   }}
                 >
-                  Shirts
+                  Shirt
+                </Link>
+                <br />
+
+                <Link
+                  to={{
+                    pathname: '/new-order',
+                    state: {
+                      type: SHORTS,
+                      gender: WOMAN,
+                    }
+                  }}
+                >
+                  Shorts
+                </Link>
+                <br />
+
+                <Link
+                  to={{
+                    pathname: '/new-order',
+                    state: {
+                      type: SKIRT,
+                      gender: WOMAN,
+                    }
+                  }}
+                >
+                  Skirt
+                </Link>
+                <br />
+
+                <Link
+                  to={{
+                    pathname: '/new-order',
+                    state: {
+                      type: SUIT,
+                      gender: WOMAN,
+                    }
+                  }}
+                >
+                  Suit
+                </Link>
+                <br />
+
+                <Link
+                  to={{
+                    pathname: '/new-order',
+                    state: {
+                      type: SWEATER,
+                      gender: WOMAN,
+                    }
+                  }}
+                >
+                  Sweater
+                </Link>
+                <br />
+
+                <Link
+                  to={{
+                    pathname: '/new-order',
+                    state: {
+                      type: TROUSERS,
+                      gender: WOMAN,
+                    }
+                  }}
+                >
+                  Trousers
                 </Link>
                 <br />
 
@@ -201,18 +392,6 @@ export default class Sidebar extends React.Component {
                 </Link>
                 <br />
 
-                <Link
-                  to={{
-                    pathname: '/new-order',
-                    state: {
-                      type: JACKET,
-                      gender: WOMAN,
-                    }
-                  }}
-                >
-                  Jackets
-                </Link>
-                <br />
               </ul>
             </div>
           </Collapsible>

@@ -18,6 +18,13 @@ import {
   L,
   XL,
   XXL,
+  COAT,
+  DRESS,
+  JUMPER,
+  SUIT,
+  SHORTS,
+  SKIRT,
+  TROUSERS,
 } from '../../../types';
 import './styles.css';
 import { standardSizes } from '../../../constants';
@@ -67,16 +74,24 @@ class OrderNewOrder extends Component {
     let clothingSizeCalculator = null;
 
     switch (type) {
-      case HOODIE:
-      case SWEATER:
-      case SHIRT:
-      case TSHIRT:
+      case COAT:
+      case DRESS:
       case JACKET:
+      case JUMPER:
+      case HOODIE:
+      case SHIRT:
+      case SUIT:
+      case SWEATER:
+      case TSHIRT:
         clothingSizeCalculator = (
           <ClothingSizeCalculatorBreast gender={gender} onClothingSizeChanged={this.handleClothingSizeChanged} />
         );
         break;
-      case JEANS: {
+      case JEANS:
+      case SHORTS:
+      case SKIRT:
+      case TROUSERS:
+       {
         if (gender === MAN) clothingSizeCalculator = (
           <ClothingSizeCalculatorWaist gender={gender} onClothingSizeChanged={this.handleClothingSizeChanged}  />
         );
