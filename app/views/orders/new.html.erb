@@ -1,6 +1,7 @@
-<%= react_component("order/NewOrder", current_user: current_user) %>
 <!--
+<%= react_component("order/NewOrder", current_user: current_user) %>
 <br/><br/><br/><br/><br/><br/>
+-->
 <div class="content w-75 p-3">
   <% @order.build_detail %>
 
@@ -68,5 +69,4 @@
       <%= f.submit("Make order", {class: 'btn btn-outline-primary mt-2'})%>
     </div>
   <% end %>
-  -->
 </div>

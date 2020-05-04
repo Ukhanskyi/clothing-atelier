@@ -4,9 +4,19 @@ class OrdersController < ApplicationController
   before_action :find_order, only: %i[show edit update destroy]
 
   def index
-    respond_to do |format|
-      format.html { current_user.orders }
-      format.json { render json: current_user.orders, include: [:detail] }
+
+    @orders = Order.all
+
+    if current_user.admin == true
+      respond_to do |format|
+        format.html { @orders }
+        format.json { render json: @orders, include: [:detail] }
+      end
+    else
+      respond_to do |format|
+        format.html { current_user.orders }
+        format.json { render json: current_user.orders, include: [:detail] }
+      end
     end
   end
 
@@ -17,6 +27,24 @@ class OrdersController < ApplicationController
   def confirm
     @order = Order.find(params[:id])
     @order.confirm!
+    render 'show'
+  end
+
+  def tailoring_start
+    @order = Order.find(params[:id])
+    @order.tailoring_start!
+    render 'show'
+  end
+
+  def tailoring_finish
+    @order = Order.find(params[:id])
+    @order.tailoring_finish!
+    render 'show'
+  end
+
+  def move_to_you
+    @order = Order.find(params[:id])
+    @order.move_to_you!
     render 'show'
   end
 

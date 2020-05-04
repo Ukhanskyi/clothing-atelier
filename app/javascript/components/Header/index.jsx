@@ -23,7 +23,7 @@ export default class Header extends React.Component {
 
         <nav className="my-2 my-md-0 mr-md-3">
           <NavLink to='/' className="p-2 text-dark">Home </NavLink>
-          <NavLink to='/about-us' className="p-2 text-dark">About us </NavLink>
+          <NavLink to='/about' className="p-2 text-dark">About us </NavLink>
           <NavLink to='/orders-list' className="p-2 text-dark">Basket </NavLink>
         </nav>
       </div>

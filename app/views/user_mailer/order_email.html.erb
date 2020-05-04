@@ -1,6 +1,14 @@
 <h1>Welcome to clothing.ateliers@gmail.com,<%= @order.surname %> <%= @order.name %></h1>
-<p>
-  You have successfully made order to clothing.ateliers@gmail.com,
-  your order is processing now. You can look on order into your basket.<br>
-</p>
-<p>Thanks for joining and have a great day!</p>
+
+<% if @order.state == 'moveToYou' %>
+  <%= render "user_mailer/send_your_order" %>
+<% elsif @order.state == 'tailoringFinished' %>
+  <%= render "user_mailer/finish_teiloring_order" %>
+<% elsif @order.state == 'tailoringStarted' %>
+  <%= render "user_mailer/start_teiloring_order" %>
+<% else %>
+  <%= render "user_mailer/confirm_order" %>
+<% end %>
+
+
+

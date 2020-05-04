@@ -8,17 +8,22 @@ import Home from './Home'
 import Collapsible from './Collapsible'
 import Sidebar from './Sidebar'
 import About from './About'
-import OrderList from './Order/OrderList'
+import OrderList from './Order/OrderList/OrderList'
 import OrderSingleOrder from './Order/OrderSingleOrder'
-import OrderNewOrder from './Order/OrderNewOrder'
+import OrderNew from './Order/OrderNew/OrderNew'
+import OrderBody from './Order/OrderBody'
 
 
 export default class Main extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      currentUser: this.props.current_user
+    };
   }
 
   render() {
+    console.log(this.state.currentUser)
     return (
       <BrowserRouter>
         <Header className="w-100" />
@@ -39,12 +44,12 @@ export default class Main extends React.Component {
             {/********************************Add routing******************************/}
             <div className="container col-md-9">
               <div id="content">
+                {/* <OrderBody /> */}
                 <Route path='//' component={Home} />
-                <Route path='/about-us' component={About} />
+                <Route path='/about' component={About} />
+                <Route path='/orders/new' component={OrderNew} />
                 <Route path='/orders-list' component={OrderList} />
-                <Route path='/single-order' component={OrderSingleOrder} />
-                <Route path='/new-order' component={OrderNewOrder} />
-
+                <Route path='/orders-show' component={OrderSingleOrder} />
               </div>
             </div>
         </div>

@@ -20,9 +20,24 @@ class Order < ApplicationRecord
   aasm column: 'state' do
     state :initialized, initial: true
     state :confirmed
+    state :tailoringStarted
+    state :tailoringFinished
+    state :moveToYou
 
     event :confirm, after: :order_email do
       transitions from: :initialized, to: :confirmed
+    end
+
+    event :tailoring_start, after: :order_email do
+      transitions from: :confirmed, to: :tailoringStarted
+    end
+
+    event :tailoring_finish, after: :order_email do
+      transitions from: :tailoringStarted, to: :tailoringFinished
+    end
+
+    event :move_to_you, after: :order_email do
+      transitions from: :tailoringFinished, to: :moveToYou
     end
   end
 

@@ -1,5 +1,7 @@
 import React from 'react'
 import MapComponent from './MapContainer'
+import Responses from './Responses/ResponsesList'
+
 import './styles'
 
 const About = () => {
@@ -41,11 +43,19 @@ const About = () => {
 
             <br />
 
-            <div>
+            <div className="content">
               <h3 className="row justify-content-center"> You can find us here </h3>
               <br />
               <MapComponent />
               <br />
+            </div>
+
+            <hr></hr>
+            <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+
+            <div className="content">
+              <h2 className="row justify-content-center"> All responses about our work </h2>
+              <Responses />
             </div>
 
           </div>

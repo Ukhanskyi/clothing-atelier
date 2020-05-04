@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   resources :posts
   resources :orders do
     member do
-      post :confirm
+      post :confirm, :tailoring_start, :tailoring_finish, :move_to_you
     end
   end
   resources :responses

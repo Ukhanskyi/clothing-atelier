@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import './styles'
 
 class OrderList extends React.Component {
-  constructor(orders) {
-    super(orders);
+  constructor(props) {
+    super(props);
     this.state = {
       orders: []
     };
