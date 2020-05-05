@@ -2,11 +2,19 @@
   <% Response.all.each do |response| %>
     <hr>
     <div class="alert alert-light">
-      <h3><%= response.name %> <%= response.surname %></h3>
-      <p><%= response.body %></p>
-      <div class="w-25%">
-        <img class="response_img" src="<%= response.nested_files %>">
+      <div class="row">
+        <div class="col-8">
+          <h3><%= response.name %> <%= response.surname %></h3>
+          <p><%= response.body %></p>
+        </div>
+
+        <div class="col-4">
+          <div class="row justify-content-center">
+            <img class="response_img" src="<%= response.nested_files %>">
+          </div> 
+        </div>
       </div>
+
       <br>
       <% if current_user.id == response.author_id %>
         <!-- <%= link_to "Edit", response_path(response), class: 'btn btn-outline-warning' %> -->

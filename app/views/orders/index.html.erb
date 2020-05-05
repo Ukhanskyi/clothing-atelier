@@ -1,12 +1,14 @@
 <!-- <%= react_component 'Orders', current_user: current_user %> -->
 
-<h2> Your orders </h2>
+<h2 class="row justify-content-center"> Your orders </h2>
 <% if current_user.admin? %>
 
   <% @orders.each do |order| %>	
     <hr>	
     <div class="alert alert-light">	
-      <h3><b><%= order.surname %> <%= order.name %></b></h3>	
+      <h3><b>Customer: <%= order.surname %> <%= order.name %></b></h3>	
+      <p><b>Email:</b> <%= order.email %></p>
+      <p><b>Phone:</b> <%= order.phone %></p>	
       <p><b>Clothing name:</b> <%= order.detail.clothing_name%></p>	
       <p><b>Size: </b><%= order.detail.size%></p>	
       <div class="btn-group">	
@@ -25,9 +27,12 @@
   <% current_user.orders.each do |order| %>	
     <hr>	
     <div class="alert alert-light">	
-      <h3><b><%= order.surname %> <%= order.name %></b></h3>	
+      <h3><b>Customer: <%= order.surname %> <%= order.name %></b></h3>	
+      <p><b>Email:</b> <%= order.email %></p>
+      <p><b>Phone:</b> <%= order.phone %></p>	
       <p><b>Clothing name:</b> <%= order.detail.clothing_name%></p>	
-      <p><b>Size: </b><%= order.detail.size%></p>	
+      <p><b>Size: </b><%= order.detail.size%></p>
+      
       <div class="btn-group">	
         <%= link_to "Show order", order_path(order), class: 'btn btn-outline-primary'  %>	
         <%= button_to "Confirm order", confirm_order_path(order), class: 'btn btn-outline-primary ml-1' %>

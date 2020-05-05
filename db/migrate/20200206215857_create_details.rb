@@ -10,7 +10,9 @@ class CreateDetails < ActiveRecord::Migration[6.0]
       t.string :sleeve
       t.string :length
       t.string :size
-      t.decimal :price
+      t.string :fabric
+      t.text :wishes
+      t.string :nested_files
       t.timestamps
     end
   end

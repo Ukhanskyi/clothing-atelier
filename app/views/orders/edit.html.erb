@@ -1,5 +1,7 @@
 <%= react_component("Edit", current_user: current_user) %>
 
+<h2 class="row justify-content-center"> Edit order </h2>
+
 <div class="content w-75 p-3">
   <% @order.build_detail %>
 
@@ -51,10 +53,16 @@
         <%= detail.input :length, collection: %w(Mini Above_knee Knee_length Cocktail Midi Maxi Floor_length) %>
       </div>
       <div class="container">
-        <%= detail.input :size, collection: %w(S M L XL XXL) %>
+        <%= detail.input :size, collection: %w(XS S M L XL XXL) %>
       </div>
       <div class="container">
-        <%= detail.input :price %>
+        <%= detail.input :fabric, collection: %w(Cotton Polyester Nylon Spandex Rayon Linen Cashmere Silk Wool Jeans Costume ) %>
+      </div>
+      <div class="container">
+        <%= detail.input :wishes, as: :text, class: 'form-control' %>
+      </div>
+      <div class="container">
+        <%= detail.input :nested_files, as: :file %>
       </div>
     <% end %>
 

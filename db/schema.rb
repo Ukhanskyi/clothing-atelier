@@ -23,7 +23,9 @@ ActiveRecord::Schema.define(version: 2020_04_09_192925) do
     t.string "sleeve"
     t.string "length"
     t.string "size"
-    t.decimal "price"
+    t.string "fabric"
+    t.text "wishes"
+    t.string "nested_files"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -44,6 +46,7 @@ ActiveRecord::Schema.define(version: 2020_04_09_192925) do
   create_table "posts", force: :cascade do |t|
     t.string "title"
     t.text "body"
+    t.string "nested_files"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

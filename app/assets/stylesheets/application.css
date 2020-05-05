@@ -138,5 +138,12 @@ ul ul a {
 }
 
 .response_img{
-    width: 10%;
+    width: 25%;
 }
+.post_img{
+    height: 200px;
+}
+.show_order_img{
+    width: 75%;
+}
+

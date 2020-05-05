@@ -2,6 +2,7 @@
 
 class Detail < ApplicationRecord
   belongs_to :order
+  mount_uploader :nested_files, NestedFileUploader
 
   validates :order, presence: true, uniqueness: { scope: :order_id }
   validates :clothing_name, presence: true, length: { within: 3...25 }
@@ -10,5 +11,4 @@ class Detail < ApplicationRecord
   validates :sleeve, length: { maximum: 20 }
   validates :length, length: { maximum: 20 }
   validates :size, presence: true, length: { maximum: 3 }
-  validates :price, presence: true, numericality: true
 end

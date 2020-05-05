@@ -1,18 +1,31 @@
+<h2 class="row justify-content-center"><%= @order.surname %> <%= @order.name %> order</h2>
 <div class="alert alert-light">
-  <h3><b><%= @order.surname %> <%= @order.name %></b></h3>
-  <p></p>
-  <p><b>Email:</b> <%= @order.email %></p>
-  <p><b>Phone number:</b> <%= @order.phone %></p>
-  <p><b>Address:</b> <%= @order.address %></p>
-  <p><b>Your gender:</b> <%= @order.gender.capitalize %></p>
-  <hr>
-  <p><b>Clothing name:</b> <%= @order.detail.clothing_name %></p>
-  <p><b>Color:</b> <%= @order.detail.color %></p>
-  <p><b>Collar:</b> <%= @order.detail.collar %></p>
-  <p><b>Sleeve type:</b> <%= @order.detail.sleeve %></p>
-  <p><b><%= @order.detail.clothing_name %>:</b> <%= @order.detail.length %></p>
-  <p><b>Size:</b> <%= @order.detail.size %></p>
-  <p><b>Price:</b> <%= @order.detail.price %> UAH</p>
+  <div class="row">
+    <div class="col-6">
+      <p><b>Customer:</b><%= @order.surname %> <%= @order.name %></p>
+      <p></p>
+      <p><b>Email:</b> <%= @order.email %></p>
+      <p><b>Phone number:</b> <%= @order.phone %></p>
+      <p><b>Address:</b> <%= @order.address %></p>
+      <p><b>Your gender:</b> <%= @order.gender.capitalize %></p>
+      <hr>
+      <p><b>Clothing name:</b> <%= @order.detail.clothing_name %></p>
+      <p><b>Color:</b> <%= @order.detail.color %></p>
+      <p><b>Collar:</b> <%= @order.detail.collar %></p>
+      <p><b>Sleeve type:</b> <%= @order.detail.sleeve %></p>
+      <p><b>Length:</b> <%= @order.detail.length %></p>
+      <p><b>Size:</b> <%= @order.detail.size %></p>
+      <p><b>Fabric:</b> <%= @order.detail.fabric %></p>
+      <p><b>All your wishes:</b> <%= @order.detail.wishes%></p>
+    </div >
+      
+    <div class="col-6">
+      <img class="show_order_img" src="<%= @order.detail.nested_files %>">
+    </div>
+  </div>
+
+  
+
       
   <div class="btn-group">
     <%= link_to "Edit", edit_order_path(@order), class: 'btn btn-outline-warning' %>

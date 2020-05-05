@@ -1,5 +1,5 @@
 <div class="content">
-  <h2> Create new post </h2>
+  <h2 class="row justify-content-center"> Create new post </h2>
   <%= form_for :post, url: posts_path do |f| %>
     <%if @post.errors.any? %>
       <% @post.errors.full_messages.each do |msg| %>
@@ -9,11 +9,16 @@
     <div class="content">
       <div class="content"> Name post<br></div>
       <%= f.text_field(:title, {:class => 'form-control'}) %>
-    </div>
+    </div><br />
     <div class="content">
       <div class="content"> Text post<br></div>
       <%= f.text_area(:body, {:class => 'form-control'}) %>
-    </div>
+    </div><br />
+    <div class="content">
+      <div class="content"> Choose image:<br></div>
+      <%= f.file_field(:nested_files, {:class => 'form-control'})%>
+    </div><br />
+
     <div class="content">
       <%= f.submit({:class => 'btn btn-outline-primary mt-1'}) %>
     </div>

@@ -8,7 +8,6 @@ class CreateResponses < ActiveRecord::Migration[6.0]
       t.string :surname
       t.text :body
       t.string :nested_files
-
       t.timestamps
     end
   end

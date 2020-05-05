@@ -2,6 +2,8 @@
 <%= react_component("order/NewOrder", current_user: current_user) %>
 <br/><br/><br/><br/><br/><br/>
 -->
+
+<h2 class="row justify-content-center"> New order </h2>
 <div class="content w-75 p-3">
   <% @order.build_detail %>
 
@@ -50,19 +52,21 @@
       <div class="container">
         <%= detail.input :length, collection: %w(Mini Above_knee Knee_length Cocktail Midi Maxi Floor_length) %>
       </div>
-
       <div class="container">
-        <%= detail.input :size, collection: %w(S M L XL XXL), class: 'form-control'%>
+        <%= detail.input :size, collection: %w(XS S M L XL XXL), class: 'form-control'%>
+      </div>
+      <div class="container">
+        <%= detail.input :fabric, collection: %w(Cotton Polyester Nylon Spandex Rayon Linen Cashmere Silk Wool Jeans Costume ) %>
+      </div>
+      <div class="container">
+        <%= detail.input :wishes, as: :text, class: 'form-control' %>
+      </div>
+      <div class="container">
+        <%= detail.input :nested_files, as: :file %>
       </div>
 
       <%# <%= render "orders/count_clothing_size" %>
       <%= react_component("order/CountClothingSize") %>
-
-
-      <div class="container">
-        <%= detail.input :price %>
-      </div>
-
     <% end %>
 
     <div class="container">

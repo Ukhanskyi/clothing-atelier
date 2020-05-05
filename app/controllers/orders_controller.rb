@@ -4,7 +4,6 @@ class OrdersController < ApplicationController
   before_action :find_order, only: %i[show edit update destroy]
 
   def index
-
     @orders = Order.all
 
     if current_user.admin == true
@@ -99,7 +98,8 @@ class OrdersController < ApplicationController
                                   :gender, :state,
                                   detail_attributes: %i[order_id clothing_name
                                                         color collar sleeve
-                                                        length size price])
+                                                        length size fabric
+                                                        wishes nested_files])
   end
 
   def find_order
